@@ -136,7 +136,7 @@
 
 </script>
 
-<style>
+<style scoped="true">
   .header-content{
     position: fixed;
     top:0;

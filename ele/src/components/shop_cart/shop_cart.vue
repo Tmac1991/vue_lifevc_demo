@@ -25,7 +25,7 @@
         <p>Rico.S为你精心推荐</p>
       </div>
       <div class="wrap-cart">
-        <div class="cart-list">
+        <div class="cart-list" ref="cartlist">
           <ul class="cart-list-content" >
             <li class="first-good">
               <div class="cart-list-item" >
@@ -90,13 +90,25 @@
 </template>
 
 <script>
-
+    import Vue from 'vue'
+    import BScroll from 'better-scroll'
     export default{
         methods:{
           back(){
             history.back();
+          },
+          _createdCartList(){
+              new BScroll(this.$refs.cartlist,{
+                click: true,
+                scrollX:true
+              })
           }
-        }
+        },
+        created(){
+              Vue.nextTick(()=>{
+                this._createdCartList()
+              })
+          }
     }
 
 </script>
@@ -226,10 +238,9 @@
   .cart-list{
     height:164px ;
     width:100% ;
-    overflow-x: scroll;
   }
   .cart-list-content{
-    width: 2120px;
+    width: 850px;
     height: 96px;
     padding: 10px 0 10px;
   }

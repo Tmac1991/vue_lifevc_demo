@@ -177,7 +177,6 @@
     width: 100%;
     position: relative;
     background: #eee;
-    margin-top: 48px;
   }
   .search-input{
     height: 36px;
