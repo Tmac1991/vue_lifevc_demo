@@ -139,12 +139,19 @@
           </ul>
         </div>
       </div>
+      <div id="to_top">
+        <img src="./imge/996919-20160830184122746-1231072039.png" alt="">
+      </div>
     </div>
 </template>
 
 <script>
 
-    export default{}
+    export default{
+        methods: {
+
+        }
+    }
 
 </script>
 
@@ -232,5 +239,16 @@
   .life-goods-list li span{
     display: inline-block;
     font-size: 13px;
+  }
+  #to_top{
+    position:fixed;
+    width:42px;
+    height:42px;
+    bottom:60px;
+    right:20px;
+  }
+  .to-top a{
+    width: 100%;
+    height: 10%;
   }
 </style>
