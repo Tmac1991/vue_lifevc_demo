@@ -139,18 +139,35 @@
           </ul>
         </div>
       </div>
-      <div id="to_top">
-        <img src="./imge/996919-20160830184122746-1231072039.png" alt="">
-      </div>
+      <back-top v-show="topValue">
+        <TopIcon></TopIcon>
+      </back-top>
     </div>
 </template>
 
 <script>
-
+    import BackTop from '../../components/BackTop.vue'
+    import TopIcon from '../../components/top_icon/top-icon.vue'
     export default{
-        methods: {
-
-        }
+        data () {
+          return {
+            topValue: false,
+          }
+        },
+      created () {
+        window.addEventListener('scroll',function(){
+          var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          if(scrollTop > 700){
+            this.topValue = true
+          }else {
+            this.topValue = false
+          }
+        }.bind(this),false)
+      },
+      components: {
+        BackTop,
+        TopIcon
+      }
     }
 
 </script>

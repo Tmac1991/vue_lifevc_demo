@@ -1,7 +1,6 @@
 <template>
     <div class="new-product">
-      <scroller>
-
+      <scroller :on-refresh="refresh">
         <div class="new-product-content">
           <div class="update">释放更新</div>
           <div class="subcat-title-1">最近一周新品</div>

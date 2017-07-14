@@ -17,6 +17,9 @@
       <div class="old_member"></div>
       <div class="experience"></div>
       <div class="house_work"></div>
+      <back-top v-show="topValue">
+        <TopIcon></TopIcon>
+      </back-top>
     </div>
 </template>
 
@@ -25,10 +28,29 @@
   import Mint from 'mint-ui';
   import 'mint-ui/lib/style.css';
   import { Swipe, SwipeItem } from 'mint-ui';
+  import BackTop from '../../components/BackTop.vue'
+  import TopIcon from '../../components/top_icon/top-icon.vue'
     export default{
+      data () {
+        return {
+          topValue: false,
+        }
+      },
+      created () {
+        window.addEventListener('scroll',function(){
+          var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          if(scrollTop > 700){
+            this.topValue = true
+          }else {
+            this.topValue = false
+          }
+        }.bind(this),false)
+      },
       components:{
         Swipe,
-        SwipeItem
+        SwipeItem,
+        BackTop,
+        TopIcon
       }
     }
 
